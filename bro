@@ -4,9 +4,9 @@
 _get_ziplink () {
     local regex
     regex='(https?)://github.com/.+/.+'
-    if [[ $UPSTREAM_REPO == "sbb_b" ]]
+    if [[ $UPSTREAM_REPO == "apdelelem123" ]]
     then
-        echo "aHR0cHM6Ly9naXRodWIuY29tL2JiaGgyL0FrdC9hcmNoaXZlL21hc3Rlci56aXA=" | base64 -d
+        echo "Cmh0dHBzOi8vZ2l0aHViLmNvbS9hcGRlbGVsZW0xMjMvUFBGMjIvYXJjaGl2ZS9tYXN0ZXIuemlw=" | base64 -d
     elif [[ $UPSTREAM_REPO =~ $regex ]]
     then
         if [[ $UPSTREAM_REPO_BRANCH ]]
@@ -16,7 +16,7 @@ _get_ziplink () {
             echo "${UPSTREAM_REPO}/archive/master.zip"
         fi
     else
-        echo "aHR0cHM6Ly9naXRodWIuY29tL2JiaGgyL0FrdC9hcmNoaXZlL21hc3Rlci56aXA=" | base64 -d
+        echo "Cmh0dHBzOi8vZ2l0aHViLmNvbS9hcGRlbGVsZW0xMjMvUFBGMjIvYXJjaGl2ZS9tYXN0ZXIuemlw=" | base64 -d
     fi
 }
 
@@ -24,14 +24,14 @@ _get_repolink () {
     local regex
     local rlink
     regex='(https?)://github.com/.+/.+'
-    if [[ $UPSTREAM_REPO == "sbb_b" ]]
+    if [[ $UPSTREAM_REPO == "apdelelem123" ]]
     then
-        rlink=`echo "aHR0cHM6Ly9naXRodWIuY29tL2JiaGgyL0FrdA==" | base64 -d`
+        rlink=`echo "aHR0cHM6Ly9naXRodWIuY29tL2FwZGVsZWxlbTEyMy9QUEYyMg====" | base64 -d`
     elif [[ $UPSTREAM_REPO =~ $regex ]]
     then
         rlink=`echo "${UPSTREAM_REPO}"`
     else
-        rlink=`echo "aHR0cHM6Ly9naXRodWIuY29tL2JiaGgyL0FrdA==" | base64 -d`
+        rlink=`echo "aHR0cHM6Ly9naXRodWIuY29tL2FwZGVsZWxlbTEyMy9QUEYyMg====" | base64 -d`
     fi
     echo "$rlink"
 }
@@ -44,7 +44,7 @@ _run_python_code() {
 _run_catpack_git() {
     $(_run_python_code 'from git import Repo
 import sys
-OFFICIAL_UPSTREAM_REPO = "https://github.com/bbhh2/Akt"
+OFFICIAL_UPSTREAM_REPO = "https://github.com/apdelelem123/PPF22"
 ACTIVE_BRANCH_NAME = "master"
 repo = Repo.init()
 origin = repo.create_remote("temponame", OFFICIAL_UPSTREAM_REPO)
